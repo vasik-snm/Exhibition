@@ -59,9 +59,9 @@
                         </nav>
                     </div>
                     <div class="col-md-6 text-right">
-                        {{-- <div class="text-right1">
-                            <a href="{{ route('createProduct') }}" class="btn btn-success">Add New Product</a>
-                        </div> --}}
+                        <div class="text-right1">
+                            <a href="{{ route('adminStallAdd') }}" class="btn btn-success">Add New Product</a>
+                        </div>
                     </div>
                 </div>
 
@@ -98,6 +98,7 @@
                                         <th>Logo Design</th>
                                         <th>Payment Mode</th>
                                         <th>Status</th>
+                                        <th>Role</th>
                                         <th>Action</th> <!-- Add the Action Buttons -->
                                     </tr>
                                 </thead>
@@ -212,6 +213,13 @@
                                                     <button class="btn btn-danger btn-sm" onclick="updateStatus({{ $stall->id }}, 'Rejected')">Reject</button>
                                                 @else
                                                     <span>Action are Performed</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($stall->role == 1)
+                                                    <span class="badge badge-primary">Admin</span>
+                                                @else
+                                                    <span class="badge badge-secondary">User</span>
                                                 @endif
                                             </td>
                                             <td>

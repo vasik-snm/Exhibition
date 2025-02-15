@@ -38,9 +38,13 @@ Route::get('/logout_admin', [AdminController::class, 'logout'])->name('admin.log
 Route::get('/admin_profile/{id}', [AdminController::class, 'getAdminProfile'])->name('admin.profile');
 Route::post('/admin_update/{id}', [AdminController::class, 'updateAdminProfile'])->name('admin.profileUpdate');
 
+
 Route::get('/stall_list', [StallController::class, 'getStallList'])->name('getStallList');
 Route::post('/stall_status_update/{id}', [StallController::class, 'stallStatusUpdate'])->name('stallStatusUpdate');
 Route::delete('/stall_delete/{id}', [StallController::class, 'deleteStall'])->name('stallDelete');
+
+Route::get('/admin_stall_add', [AdminController::class, 'adminStallAdd'])->name('adminStallAdd');
+Route::post('/admin_stall_register', [AdminController::class, 'adminStallARegister'])->name('adminStallARegister');
 
 Route::post('/update-payment-mode/{id}', [StallController::class, 'updatePaymentMode'])->name('update.payment.mode');
 Route::post('/update-logo-design/{id}', [StallController::class, 'updateLogoDesign'])->name('update.logo.design');

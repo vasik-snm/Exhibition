@@ -33,7 +33,8 @@ class StallInfo extends Model
         'transaction_no',
         'payment_mode',
         'logo_design',
-        'extra_notes'
+        'extra_notes',
+        'role',
 
     ];
 }
